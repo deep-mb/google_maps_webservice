@@ -879,7 +879,7 @@ class Review {
 @JsonSerializable()
 class PlacesAutocompleteResponse extends GoogleResponseStatus {
   @JsonKey(defaultValue: <Prediction>[])
-  final List<Prediction> predictions;
+  List<Prediction> predictions;
 
   PlacesAutocompleteResponse({
     required String status,
@@ -897,26 +897,26 @@ class PlacesAutocompleteResponse extends GoogleResponseStatus {
 
 @JsonSerializable()
 class Prediction {
-  final String? description;
-  final String? id;
+  String? description;
+  String? id;
 
   @JsonKey(defaultValue: <Term>[])
-  final List<Term> terms;
+  List<Term> terms;
 
-  final int? distanceMeters;
+  int? distanceMeters;
 
   /// JSON place_id
-  final String? placeId;
-  final String? reference;
+  String? placeId;
+  String? reference;
 
   @JsonKey(defaultValue: <String>[])
-  final List<String> types;
+  List<String> types;
 
   /// JSON matched_substrings
   @JsonKey(defaultValue: <MatchedSubstring>[])
-  final List<MatchedSubstring> matchedSubstrings;
+  List<MatchedSubstring> matchedSubstrings;
 
-  final StructuredFormatting? structuredFormatting;
+  StructuredFormatting? structuredFormatting;
 
   Prediction({
     this.description,
@@ -937,8 +937,8 @@ class Prediction {
 
 @JsonSerializable()
 class Term {
-  final num offset;
-  final String value;
+   num offset;
+   String value;
 
   Term({
     required this.offset,
@@ -962,8 +962,8 @@ class Term {
 
 @JsonSerializable()
 class MatchedSubstring {
-  final num offset;
-  final num length;
+   num offset;
+   num length;
 
   MatchedSubstring({
     required this.offset,
@@ -988,11 +988,11 @@ class MatchedSubstring {
 
 @JsonSerializable()
 class StructuredFormatting {
-  final String mainText;
+   String mainText;
 
   @JsonKey(defaultValue: <MatchedSubstring>[])
-  final List<MatchedSubstring> mainTextMatchedSubstrings;
-  final String? secondaryText;
+   List<MatchedSubstring> mainTextMatchedSubstrings;
+   String? secondaryText;
 
   StructuredFormatting({
     required this.mainText,
